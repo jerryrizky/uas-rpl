@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Finance Tracker</title></head>
+<body>
+    <h2>Personal Finance Tracker</h2>
+    <form method="POST">
+        <input type="text" name="description" placeholder="Keterangan" required>
+        <input type="number" name="amount" placeholder="Jumlah" required>
+        <button type="submit">Tambah</button>
+    </form>
+    <hr>
+    <h3>Riwayat Transaksi:</h3>
+    <ul>
+        {% for t in transactions %}
+        <li>{{ t.description }}: Rp{{ t.amount }}</li>
+        {% endfor %}
+    </ul>
+    <h4>Total: Rp{{ total }}</h4>
+</body>
+</html>
